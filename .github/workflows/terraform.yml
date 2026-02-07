@@ -1,0 +1,37 @@
+name: terraform workflow demo
+on:
+  workflow_dispatch:
+    inputs:
+      destroy:
+        description: 'is destroy?'
+        required: true
+        type: boolean
+        default: false
+      action:
+        description: action to perform
+        required: true
+        type: choice
+        options:
+          - apply
+          - destroy
+jobs:
+  terraform:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Terraform init
+        run: echo "terraform init"
+      - name: Terraform plan
+        run: echo "terraform plan"
+      - name: Terraform apply boolean input
+        if: ${{ !inputs.destroy }}
+        run: echo "terraform apply"
+      - name: Terraform destroy boolean input
+        if: ${{ inputs.destroy }}
+        run: echo "terraform destroy"
+      - name: terraform apply based on string input
+        if: ${{ inputs.action == 'apply' }}
+        run: echo "terraform apply"
+      - name: terraform destroy based on string input
+        if: ${{ inputs.action == 'destroy' }}
+        run: echo "terraform destroy"
