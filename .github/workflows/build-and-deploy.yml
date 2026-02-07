@@ -25,6 +25,7 @@ jobs:
         run: echo "Building the application..."
   deploy:
     runs-on: ubuntu-latest
+    depends-on: build
     steps:
       - name: Print input parameters
         run: |
