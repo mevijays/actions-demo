@@ -1,8 +1,7 @@
 name: variable workflow
 on:
   workflow_dispatch:
-  push:
-    branches: [ main ]
+
 env:
   MY_VAR: "This is a custom environment variable"
 jobs:

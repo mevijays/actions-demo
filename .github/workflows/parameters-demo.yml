@@ -1,0 +1,24 @@
+name: parameterised run
+on:
+  workflow_dispatch:
+    inputs:
+      name:
+        description: 'Your name'
+        required: true
+        type: string
+        default: 'vijay'
+      environment:
+        description: 'Select environment'
+        required: true
+        default: 'dev'
+        type: choice
+        options:
+          - dev
+          - prod
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Print input parameters
+        run: |
+          echo "Hello, ${{ inputs.name }}! You have selected the ${{ inputs.environment }} environment."
