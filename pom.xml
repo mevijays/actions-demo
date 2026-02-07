@@ -185,7 +185,7 @@
             </plugin>
         </plugins>
     </build>
-</project>
+
 <distributionmanagement>
     <repository>
         <id>github</id>
@@ -198,3 +198,4 @@
         <url>https://maven.pkg.github.com/mevijays/actions-demo</url>
     </snapshotrepository>
 </distributionmanagement>
+</project>
