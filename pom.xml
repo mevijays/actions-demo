@@ -186,16 +186,16 @@
         </plugins>
     </build>
 
-<distributionmanagement>
+<distributionManagement>
     <repository>
         <id>github</id>
         <name>Github packages</name>
         <url>https://maven.pkg.github.com/mevijays/actions-demo</url>
     </repository>
-    <snapshotrepository>
+    <snapshotRepository>
         <id>github</id>
         <name>Github packages</name>
         <url>https://maven.pkg.github.com/mevijays/actions-demo</url>
-    </snapshotrepository>
-</distributionmanagement>
+    </snapshotRepository>
+</distributionManagement>
 </project>
