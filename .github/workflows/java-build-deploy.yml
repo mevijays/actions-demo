@@ -55,5 +55,5 @@ jobs:
           password: ${{ secrets.GITHUB_TOKEN }}
       - name: Build and push Docker image
         run: |
-          docker build -t ghcr.io/${{ github.repository_owner }}/java-app-demo:${{ github.run_number }} .
+          docker build -t ghcr.io/${{ github.repository_owner }}/java-app-demo:${{ github.run_number }} ${{ github.workspace }}
           docker push ghcr.io/${{ github.repository_owner }}/java-app-demo:${{ github.run_number }}
