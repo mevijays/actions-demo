@@ -1,16 +1,17 @@
 name: maven java docker build deploy
 on:
   workflow_dispatch:
+    inputs:
+      version:
+        description: 'version to deploy'
+        required: true
+        type: string
+        default: 'v1.0.0-SNAPSHOT'
 permissions:
   contents: read
   id-token: write
   packages: write
-inputs:
-  version:
-    description: 'version to deploy'
-    required: true
-    type: string
-    default: 'v1.0.0-SNAPSHOT'
+
 jobs:
   build:
     runs-on: ubuntu-latest
