@@ -20,6 +20,9 @@ jobs:
         with:
           maven-version: 3.9.9
       - name: Build with Maven
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          GITHUB_ACTOR: ${{ github.actor }}
         run: |
           mvn clean test package deploy -s .mvn/settings.xml -Drevision=${{ inputs.version }}
       - name: upload jar
